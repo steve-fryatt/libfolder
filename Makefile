@@ -50,9 +50,9 @@ $(info Building with version $(VERSION) ($(RELEASE)) on date $(BUILD_DATE))
 # The archive to assemble the release files in.  If $(RELEASE) is set, then the file can be given
 # a standard version number suffix.
 
-ZIPFILE := solitaire$(RELEASE).zip
-SRCZIPFILE := solitaire$(RELEASE)src.zip
-BUZIPFILE := solitaire$(shell date "+%Y%m%d").zip
+ZIPFILE := libfolder$(RELEASE).zip
+SRCZIPFILE := libfolder$(RELEASE)src.zip
+BUZIPFILE := libfolder$(shell date "+%Y%m%d").zip
 
 # Build Tools
 
