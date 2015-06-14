@@ -1,0 +1,47 @@
+REM >FindLibs
+REM
+REM Copyright 2015, Stephen Fryatt (info@stevefryatt.org.uk)
+REM
+REM This file is part of LibFolder:
+REM
+REM   http://www.stevefryatt.org.uk/software/
+REM
+REM Licensed under the EUPL, Version 1.1 only (the "Licence");
+REM You may not use this work except in compliance with the
+REM Licence.
+REM
+REM You may obtain a copy of the Licence at:
+REM
+REM   http://joinup.ec.europa.eu/software/page/eupl
+REM
+REM Unless required by applicable law or agreed to in
+REM writing, software distributed under the Licence is
+REM distributed on an "AS IS" basis, WITHOUT WARRANTIES
+REM OR CONDITIONS OF ANY KIND, either express or implied.
+REM
+REM See the Licence for the specific language governing
+REM permissions and limitations under the Licence.
+
+RootFolder$ = "<LibFolder$Dir>.Libs"
+
+FileBlockSize% = 1024
+TargetFile$ = "SetVars"
+
+DIM FileBlock% FileBlockSize%
+
+Next% = 0
+
+REPEAT
+	SYS "OS_GBPB", 10, RootFolder$, FileBlock%, 1, Next%, FileBlockSize%, 0 TO ,,,Read%, Next%
+
+	IF Read% > 0 THEN
+		IF FileBlock%!16 = 2 THEN
+			SYS "XOS_GenerateError", FileBlock% + 20 TO LibFolder$
+			LibFile$ = RootFolder$ + "." + LibFolder$ + "." + TargetFile$
+			SYS "OS_File", 23, LibFile$ TO ObjectType%,,,,,,FileType%
+			IF ObjectType% = 1 AND FileType% = &FEB THEN OSCLI("Filer_Run " + LibFile$)
+		ENDIF
+	ENDIF
+UNTIL Next% = -1
+
+END

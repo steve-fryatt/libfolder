@@ -1,0 +1,93 @@
+<document title="LibFolder">
+<define name="version" value="1.10">
+<define name="date" value="" length=30 align="right">
+
+
+
+
+
+<literal mode="Text">
+=============================================================================
+LibFolder - Library Storage                                      Version $$version$$
+
+(c) Stephen Fryatt, 2015                       $$date$$
+=============================================================================
+
+</literal>
+
+
+
+
+
+<chapter title="License" file="License">
+
+<cite>LibFolder</cite> is licensed under the EUPL, Version&nbsp;1.1 only (the &ldquo;Licence&rdquo;); you may not use this work except in compliance with the Licence.
+
+You may obtain a copy of the Licence at <link ref="#url http://joinup.ec.europa.eu/software/page/eupl">http://joinup.ec.europa.eu/software/page/eupl</link>
+
+Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &ldquo;<strong>as is</strong>&rdquo; basis, <strong>without warranties or conditions of any kind</strong>, either express or implied.
+
+See the Licence for the specific language governing permissions and limitations under the Licence.
+
+The source for <cite>LibFolder</cite> can be found alongside this binary download, at <link ref="#url http://www.stevefryatt.org.uk/software">http://www.stevefryatt.org.uk/software</link>
+
+The necessary libraries and build tools can be found at <link ref="#url http://www.stevefryatt.org.uk/software/build">http://www.stevefryatt.org.uk/software/build</link>
+
+</chapter>
+
+
+
+
+<chapter title="Installing LibFolder" file="Install">
+
+<cite>LibFolder</cite> requires RISC&nbsp;OS&nbsp;3.1 or later. To install <cite>LibFolder</cite>, copy the <file>!LibFolder</file> application to a suitable place on your disc &ndash; probably the <file>AcornC/C++</file> folder that forms part of the DDE.
+
+</chapter>
+
+
+
+
+<chapter title="Using LibFolder" file="Use">
+
+<cite>LibFolder</cite> provides a home for libraries which are to be used with the DDE but do not wish to be integrated into its directory strcuture.
+
+When seen by the Filer, or when double-clicked, <cite>LibFolder</cite> scans the <file>Libs</file> folder within it for sub-folders containing an Obey file named <file>SetVars</file>. Any such Obey files which are found will be passed to <command>Filer_Run</command>.
+
+Double-clicking on <file>!LibFolder</file> will also open the <file>Libs</file> folder within it, to allow new libraries to be installed.
+
+</chapter>
+
+
+
+
+<chapter title="Version History" file="History">
+
+Here is a list of the versions of LibFolder, along with all the changes made.
+
+
+<subhead title="Test Build">
+
+First public release.
+
+
+
+</chapter>
+
+
+
+
+<literal mode="Text">
+
+Updates and Contacting Me
+-------------------------
+
+  If you have any comments about LibFolder, or would like to report any bugs
+  that you find, you can email me at the address below.
+
+  Updates to LibFolder and more programs for RISC OS computers can be found
+  on my website at http://www.stevefryatt.org.uk/software/
+
+  Stephen Fryatt
+  email: steve@stevefryatt.org.uk
+</literal>
+
